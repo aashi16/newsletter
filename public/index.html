@@ -1,0 +1,62 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/index.css"></link>
+    <title>AHITO - Fitness App</title>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.png">
+
+  </head>
+  <body>
+      <main>
+        <header>
+          <img src="./assets/logo.png" alt="Ahito text logo">
+        </header>
+        <div class="newsletter">
+              <h1 class="card-title">Join our newsletter</h1>
+              <p role="sub-heading" aria-details="" class="card-subtitle">Subscribe to our newsletter to stay up-to date on latest trends and product anouncemnets.
+               </br></br>Don't worry we won't spam you! we will let you select your preferred time.
+              </p>
+            <form class="newsletter-form" action="/" method="POST">
+              <h2 aria-label="form title" class="form-title">Sign Up</h2>
+              <div class="form-row">
+
+                  <label id="username">Name <span>(Optional)</span></label>
+                  <input type="text" name="name" aria-labelledby="username">
+                  <span class="name-message"></span>
+              </div>
+              <div class="form-row">
+                  <label id="userEmail">E-mail<sup role="">*</sup></label>
+                  <input type="email" name="email" aria-labelledby="userEmail" required aria-required="true" aria-invalid="true">
+                  <span class="email-message"></span>
+              </div>
+              <div class="form-row">
+                  <label id="preferred-language">Preferred Language</label>
+                  <div class="dropdown language" role="button" tabindex="0" aria-labelledby="preferred-language">
+                    <div class="dropdown-text">en-GB</div>
+                    <div class="dropdown-content"></div>
+                  </div>
+                  
+              </div>
+              <div class="form-row">
+                  <label id="preferred-time">Preferred Time</label>
+                  <div class="dropdown time" role="button" tabindex="0" aria-labelledby="preferred-time">
+                    <div class="dropdown-text">Monday Morning</div>
+                    <div class="dropdown-content" aria-expanded="false" role="list" ></div>
+                  </div>
+              </div>
+              <button type="submit" disabled class="disabled">Subscribe</button>
+            </form>
+        </div>
+        <!-- Modal Code  -->
+        <div class="modal-background"></div>
+         <div id="modal-zoom-in" class="modal">
+           <span role="button"  tabindex="0" class="close">close</span>
+           <h2 class="card-title">Thanks!</h2>
+           <p class="card-subtitle">You've successfully signed up. We'll be in touch soon. In the meantime, why not take a look at our website</div>
+           </p>
+      </main>
+      <script defer src="index.js"></script>
+  </body>
+</html>
