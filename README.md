@@ -43,5 +43,5 @@ Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
 
 # Resources
 
-For Logo : [Canva](https://www.canva.com/)
-For Web Accessbility Test : [accessibe](https://accessibe.com/)
+- For Logo : [Canva](https://www.canva.com/)
+- For Web Accessbility Test : [accessibe](https://accessibe.com/)
