@@ -1,0 +1,214 @@
+<style>
+  :root {
+    --white: #fff;
+    --notCharged: #fff;
+  }
+
+  .bike {
+    height: 100%;
+    position: relative;
+    font-size: 2vmin;
+    cursor: pointer;
+  }
+  .bike.charged {
+    color: green;
+  }
+  .frame {
+    height: 0.3em;
+    position: absolute;
+    top: 2.6em;
+    width: 4.7em;
+    background: var(--white);
+    transform: rotate(332deg);
+    left: 4.3em;
+  }
+  .frame::before {
+    height: 0.3em;
+    width: 2em;
+    background: var(--white);
+    position: absolute;
+    content: "";
+    top: -1em;
+    transform: rotate(75deg);
+    left: 1.4em;
+  }
+  .frame::after {
+    position: absolute;
+    content: "";
+    top: -1.9em;
+    transform: rotate(30deg);
+    left: 1.4em;
+    width: 0;
+    height: 0;
+    border-top: 0.6em solid var(--white);
+    border-right: 2em solid transparent;
+    border-top-right-radius: 13px;
+    border-bottom-left-radius: 13px;
+  }
+  .frame-1 {
+    height: 0.3em;
+    position: absolute;
+    top: 2.1em;
+    width: 3.4em;
+    background: var(--white);
+    left: 7.3em;
+    transform: rotate(76deg);
+    border-radius: 0.2em;
+  }
+  .frame-1::before {
+    position: absolute;
+    content: "";
+    top: 0.6em;
+    left: -0.4em;
+    width: 0.3em;
+    height: 0.6em;
+    background: var(--white);
+    border-radius: 0.2em;
+    transform: rotate(53deg);
+  }
+  .frame-1::after {
+    position: absolute;
+    content: "";
+    top: 0.3em;
+    transform: rotate(109deg);
+    left: -0.4em;
+    width: 0.9em;
+    height: 0.3em;
+    background: var(--white);
+    border-radius: 0.2em;
+  }
+  .front-wheel {
+    height: 2.4em;
+    width: 2.4em;
+    position: absolute;
+    left: 7.8em;
+    top: 2.2em;
+    border-radius: 100%;
+    background-color: #000;
+    border: 0.3em solid var(--notCharged);
+    animation: spinWheel 1s infinite linear;
+  }
+  @keyframes spinWheel {
+    0% {
+      transform: none;
+    }
+
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+  .front-wheel::before {
+    content: "";
+    position: absolute;
+    height: 2.7em;
+    width: 0.3em;
+    background: var(--notCharged);
+    transform: rotate(73deg);
+    top: -0.2em;
+    left: 1.2em;
+  }
+  .front-wheel::after {
+    content: "";
+    position: absolute;
+    height: 2.7em;
+    width: 0.3em;
+    background: var(--notCharged);
+    transform: rotate(165deg);
+    top: -0.1em;
+    left: 1.2em;
+  }
+  .back-wheel {
+    width: 2.2em;
+    height: 1.1em;
+    border-top-left-radius: 1.3em;
+    border-top-right-radius: 1.3em;
+    border: 0.3em solid var(--white);
+    border-bottom: 0;
+    transform: rotate(327deg);
+    position: absolute;
+    top: 2.5em;
+    left: 3em;
+  }
+  .electric {
+    position: absolute;
+    top: 4.2em;
+    height: 0.3em;
+    width: 2.5em;
+    background: var(--white);
+    left: 3.7em;
+  }
+  .plug {
+    width: 1em;
+    height: 0.6em;
+    border-top-left-radius: 1.2em;
+    border-top-right-radius: 1.2em;
+    background: var(--white);
+    border-bottom: 0;
+    transform: rotate(269deg);
+    position: absolute;
+    top: -0.2em;
+    left: 1.9em;
+  }
+  .plug::before {
+    position: absolute;
+    content: "";
+    height: 0.5em;
+    width: 0.2em;
+    background: var(--white);
+    top: 0.5em;
+    left: 0.6em;
+    border-radius: 0em 0em 0.2em 0.2em;
+  }
+  .plug::after {
+    position: absolute;
+    content: "";
+    height: 0.5em;
+    width: 0.2em;
+    background: var(--white);
+    top: 0.5em;
+    left: 0.2em;
+    border-radius: 0em 0em 0.2em 0.2em;
+  }
+  .charged .electric {
+    width: 3.7em;
+  }
+  .charged .plug {
+    left: 2.9em;
+  }
+  .text {
+    position: absolute;
+    top: 3.87em;
+    left: 2.5em;
+    border-top: 0.3em solid var(--notCharged);
+    width: 5em;
+    text-align: center;
+    font-size: 1.26em;
+    font-weight: 600;
+    font-family: serif;
+    color: var(--white);
+  }
+</style>
+<div class="bike">
+  <div class="frame"></div>
+  <div class="frame-1"></div>
+  <div class="front-wheel"></div>
+  <div class="back-wheel"></div>
+  <div class="electric">
+    <div class="plug"></div>
+  </div>
+  <div class="text">AHITO</div>
+</div>
+
+<script>
+  const bike = document.querySelector(".bike");
+  const root = document.querySelector(":root");
+  const electric = document.querySelector("electric");
+  bike.addEventListener("mouseenter", () => {
+    bike.classList.toggle("charged");
+    if (bike.classList.contains("charged")) {
+      root.style.setProperty("--notCharged", "#1bd11b");
+    } else {
+      root.style.setProperty("--notCharged", "#fff");
+    }
+  });
+</script>

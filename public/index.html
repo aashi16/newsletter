@@ -6,12 +6,18 @@
     <link rel="stylesheet" type="text/css" href="/index.css"></link>
     <title>AHITO - Fitness App</title>
     <link rel="icon" type="image/x-icon" href="./assets/favicon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+    <script> 
+    $(function(){
+      $("#logo").load("logo.html"); 
+    });
+    </script> 
 
   </head>
   <body>
       <main>
         <header>
-          <img src="./assets/logo.png" alt="Ahito text logo">
+          <div id="logo"></div>
         </header>
         <div class="newsletter">
               <h1 class="card-title">Join our newsletter</h1>
@@ -21,7 +27,6 @@
             <form class="newsletter-form" action="/" method="POST">
               <h2 aria-label="form title" class="form-title">Sign Up</h2>
               <div class="form-row">
-
                   <label id="username">Name <span>(Optional)</span></label>
                   <input type="text" name="name" aria-labelledby="username">
                   <span class="name-message"></span>
@@ -36,8 +41,7 @@
                   <div class="dropdown language" role="button" tabindex="0" aria-labelledby="preferred-language">
                     <div class="dropdown-text">en-GB</div>
                     <div class="dropdown-content"></div>
-                  </div>
-                  
+                  </div>  
               </div>
               <div class="form-row">
                   <label id="preferred-time">Preferred Time</label>
